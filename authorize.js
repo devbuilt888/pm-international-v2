@@ -33,7 +33,7 @@ function getAnAcceptPaymentPage( amount, url) {
 		var setting4 = new ApiContracts.SettingType();
 		setting4.setSettingName("hostedPaymentReturnOptions");
 		//  + url + 
-		setting4.setSettingValue(`{\"showReceipt\": true, \"url\": \"http://localhost:3000/category/${url}\", \"urlText\": \"Continue\", \"cancelUrl\": \"http://localhost:3000/\", \"cancelUrlText\": \"Cancel\"}`);
+		setting4.setSettingValue(`{\"showReceipt\": true, \"url\": \"https://megalodon-pm-api-client.herokuapp.com/${url}\", \"urlText\": \"Continue\", \"cancelUrl\": \"http://localhost:3000/\", \"cancelUrlText\": \"Cancel\"}`);
 
 		var setting5 = new ApiContracts.SettingType();
 		setting5.setSettingName("hostedPaymentSecurityOptions");
