@@ -49,6 +49,6 @@ app.use(enforce.HTTPS({ trustProtoHeader: true }));
 //   console.log(`server running on port ${port}`);
 // });
 
-http.createServer(app).listen(app.get('port'), function() {
-  console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(port, function() {
+  console.log('Express server listening on port ' + port);
 });
