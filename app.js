@@ -42,6 +42,7 @@ app.use('/api/v1', router);
 
 app.use(enforce.HTTPS());
 
+// http.createServer(app).listen(app)
 
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
