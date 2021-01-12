@@ -9,9 +9,6 @@ var router = require('./router');
 const DB_URL = "mongodb+srv://dataAdmin:VXjgm4LxlIIqnW38@cluster0.l5884.mongodb.net/PM-LATAM-V1?retryWrites=true&w=majority";
 const port = process.env.PORT || 5000;
 const app = express();
-var enforce = require('express-sslify');
-var http = require("http");
-
 
 
 
@@ -37,18 +34,7 @@ app.use((req, res, next) => {
 // Add api route
 app.use('/api/v1', router);
 
-
-
-
-
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
-// http.createServer(app).listen(app)
-
-// app.listen(port, () => {
-//   console.log(`server running on port ${port}`);
-// });
-
-http.createServer(app).listen(port, function() {
-  console.log('Express server listening on port ' + port);
+app.listen(port, () => {
+  console.log(`server running on port ${port}`);
 });
+
