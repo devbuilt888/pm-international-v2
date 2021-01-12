@@ -10,6 +10,7 @@ const DB_URL = "mongodb+srv://dataAdmin:VXjgm4LxlIIqnW38@cluster0.l5884.mongodb.
 const port = process.env.PORT || 5000;
 const app = express();
 var enforce = require('express-sslify');
+var http = require("http");
 
 
 
@@ -44,7 +45,10 @@ app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
 // http.createServer(app).listen(app)
 
-app.listen(port, () => {
-  console.log(`server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`server running on port ${port}`);
+// });
 
+http.createServer(app).listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + app.get('port'));
+});
