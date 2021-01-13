@@ -3,6 +3,8 @@ var mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const userSchema = new Schema({
+    price: {type: String },
+    country: { type: String },
     firstName: { type: String },
     lastName: { type: String },
     email: { type: String },

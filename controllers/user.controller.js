@@ -45,6 +45,8 @@ const getUser = (req, res) => {
 const order = (req, res) => {
     const {
         body: {
+            price,
+            country,
             firstName,
             lastName,
             email,
@@ -54,11 +56,13 @@ const order = (req, res) => {
             zipCode,
             orderId,
             tpNumber
-        }
+        },
     } = req;
 
 
     const newUser = new User({
+        price,
+        country,
         firstName,
         lastName,
         email,
@@ -80,6 +84,8 @@ const order = (req, res) => {
 const signup = (req, res) => {
     const {
         body: {
+            price,
+            country,
             firstName,
             lastName,
             email,
@@ -96,6 +102,8 @@ const signup = (req, res) => {
     } = req;
 
     const newUser = new User({
+        price, 
+        country,
         firstName,
         lastName,
         email,
@@ -122,8 +130,8 @@ const signup = (req, res) => {
 
 // Serialize a user object
 function serializeUser(user) {
-    const { firstName, lastName, email, phone, street, zipCode, city, govId, dob, sponsorName, sponsorTP, orderId } = user;
-    return { firstName, lastName, email, phone, street, zipCode, city, govId, dob, sponsorName, sponsorTP, orderId };
+    const { price, country, firstName, lastName, email, phone, street, zipCode, city, govId, dob, sponsorName, sponsorTP, orderId, tpNumber } = user;
+    return { price, country, firstName, lastName, email, phone, street, zipCode, city, govId, dob, sponsorName, sponsorTP, orderId, tpNumber};
 }
 
 module.exports.getHostedToken = getHostedToken;
