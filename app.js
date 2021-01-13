@@ -30,7 +30,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // Add api route
 app.use('/api/v1', router);
 
