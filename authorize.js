@@ -33,7 +33,7 @@ function getAnAcceptPaymentPage( amount, url) {
 		var setting4 = new ApiContracts.SettingType();
 		setting4.setSettingName("hostedPaymentReturnOptions");
 		//  + url + 
-		setting4.setSettingValue(`{\"showReceipt\": true, \"url\": \"https://megalodon-pm-api-client.herokuapp.com/category/${url}\", \"urlText\": \"Continue\", \"cancelUrl\": \"http://localhost:3000/\", \"cancelUrlText\": \"Cancel\"}`);
+		setting4.setSettingValue(`{\"showReceipt\": true, \"url\": \"https://pmi-fpo-americas.com/category/${url}\", \"urlText\": \"Continue\", \"cancelUrl\": \"https://pmi-fpo-americas.com\", \"cancelUrlText\": \"Cancel\"}`);
 
 		var setting5 = new ApiContracts.SettingType();
 		setting5.setSettingName("hostedPaymentSecurityOptions");
@@ -73,6 +73,7 @@ function getAnAcceptPaymentPage( amount, url) {
 				if (response.getMessages().getResultCode() == ApiContracts.MessageTypeEnum.OK) {
 					resolve(response.getToken());
 
+
 				}
 				else {
 					//console.log('Result Code: ' + response.getMessages().getResultCode());
@@ -92,6 +93,7 @@ function getAnAcceptPaymentPage( amount, url) {
 
 if (require.main === module) {
 	getAnAcceptPaymentPage(function () {
+		// response.getTransactionResponse().getTransId()
 		console.log('getAnAcceptPaymentPage call complete.');
 	});
 }
