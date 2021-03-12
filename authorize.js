@@ -91,6 +91,8 @@ function getAnAcceptPaymentPage( amount, url) {
 	});
 }
 
+//requiring main 
+
 if (require.main === module) {
 	getAnAcceptPaymentPage(function () {
 		// response.getTransactionResponse().getTransId()
